@@ -1,62 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Happy Birthday 💙</title>
+    <title>A Birthday Wish For You 💙</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
-<body class="birthday-page">
+<body>
 
-    <!-- Background glow -->
-    <div class="glow glow-one"></div>
-    <div class="glow glow-two"></div>
+    <main class="page">
 
-    <!-- Flowers will be created by JavaScript -->
-    <div id="flowers-container"></div>
+        <div class="card message-card">
 
-    <main class="birthday-container">
-
-        <div class="birthday-card">
-
-            <div class="cake">🎂</div>
-
-            <p class="surprise-text">
-                The surprise is finally here... 🥹
-            </p>
-
-            <h1 class="birthday-title">
-                Happy Birthday
-            </h1>
-
-            <h2>
-                My Best Friend! 💙
-            </h2>
-
-            <div class="divider">
-                ✦ 🌸 ✦
+            <div class="small-cake">
+                🎂
             </div>
 
-            <p class="birthday-message">
-                May your life always be filled with beautiful
-                moments, genuine smiles, peaceful days and
-                people who love you just as much as you deserve. 🩵
+            <p class="little-text">
+                For the most wonderful sister...
             </p>
 
-            <p class="birthday-message">
-                Thank you for being the amazing person you are.
-                I'm genuinely lucky to call you my best friend. 🦋
-            </p>
+            <h1>
+                Happy Birthday! 💙
+            </h1>
 
-            <p class="final-message">
-                Keep smiling, birthday girl! 🎀✨
-            </p>
+            <div class="sparkles">
+                ✨ 🌸 ✨
+            </div>
 
-            <div class="hearts">
-                💙 🩵 💙 🩵 💙
+            <!-- TWO PHOTOS -->
+
+            <div class="photo-grid two-photos">
+
+                <div class="photo">
+                    <img src="{{ url_for('static', filename='images/sister4.jpg') }}"
+                         alt="Beautiful birthday girl">
+                </div>
+
+                <div class="photo">
+                    <img src="{{ url_for('static', filename='images/sister5.jpg') }}"
+                         alt="Beautiful birthday girl">
+                </div>
+
+            </div>
+
+            <!-- MESSAGE -->
+
+            <div class="letter">
+
+                <p>
+                    Dear Sister, 💙
+                </p>
+
+                <p>
+                    Today is your special day, and I just want you
+                    to know how incredibly special you are.
+                </p>
+
+                <p>
+                    You bring so much happiness, laughter and
+                    warmth into the lives of the people around you.
+                    Your smile can make an ordinary day feel
+                    completely different.
+                </p>
+
+                <p>
+                    I pray that God always keeps you happy,
+                    healthy and surrounded by people who genuinely
+                    care about you.
+                </p>
+
+                <p>
+                    May God bless you with endless happiness,
+                    beautiful opportunities, success in everything
+                    you do and the strength to overcome every
+                    difficult moment.
+                </p>
+
+                <p>
+                    May every dream you have slowly turn into
+                    reality. May your future be brighter than
+                    you imagine and may every new year of your
+                    life bring you something beautiful.
+                </p>
+
+                <p>
+                    Never stop smiling. Never stop believing in
+                    yourself. And never forget how loved and
+                    important you are. 🦋
+                </p>
+
+                <p>
+                    I'm truly grateful that I get to call you
+                    my sister. No matter how much time passes,
+                    I will always wish the very best for you.
+                </p>
+
+                <p class="strong-message">
+                    May God bless you today, tomorrow,
+                    and every single day of your life. 🙏💙
+                </p>
+
+                <p class="closing">
+                    Happy Birthday once again! 🎂✨
+                </p>
+
+            </div>
+
+            <!-- GIFT -->
+
+            <div class="gift-section">
+
+                <p>
+                    There's still one little surprise waiting for you...
+                </p>
+
+                <div class="gift">
+                    🎁
+                </div>
+
+                <h3>
+                    Your Birthday Gift
+                </h3>
+
+                <a href="{{ url_for('surprise') }}"
+                   class="gift-button">
+                    🎁 Open Your Gift
+                </a>
+
             </div>
 
         </div>

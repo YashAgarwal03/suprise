@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Birthday Surprise 🎬💙</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <div class="card surprise-card">
+
+            <div class="small-cake">
+                🎂
+            </div>
+
+            <p class="little-text">
+                And finally...
+            </p>
+
+            <h1>
+                Your Birthday Surprise! 🎉
+            </h1>
+
+            <div class="sparkles">
+                ✨ 💙 ✨
+            </div>
+
+            <p class="video-intro">
+                This little video is just for you. 🦋
+            </p>
+
+            <!-- VIDEO -->
+
+            <div class="video-container">
+
+                <video id="birthdayVideo"
+                       controls
+                       playsinline
+                       preload="metadata">
+
+                    <source
+                        src="{{ url_for('static', filename='videos/birthday.mp4') }}"
+                        type="video/mp4">
+
+                    Your browser does not support video playback.
+
+                </video>
+
+            </div>
+
+            <button id="playButton"
+                    class="main-button video-button">
+                ▶ Play Birthday Video
+            </button>
+
+            <div class="final-wishes">
+
+                <h2>
+                    Happy Birthday, Sister! 💙
+                </h2>
+
+                <p>
+                    May your life always be filled with
+                    happiness, love, laughter and beautiful
+                    memories.
+                </p>
+
+                <p>
+                    Keep shining, keep smiling,
+                    and always be the amazing person you are. ✨
+                </p>
+
+                <div class="big-hearts">
+                    💙 🩵 💙 🩵 💙
+                </div>
+
+                <p class="final-line">
+                    With lots and lots of love. ❤️
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

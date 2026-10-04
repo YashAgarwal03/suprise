@@ -13,5 +13,10 @@ def birthday():
     return render_template("birthday.html")
 
 
+@app.route("/surprise")
+def surprise():
+    return render_template("surprise.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

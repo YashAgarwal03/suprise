@@ -1,18 +1,38 @@
-function createFlower() {
-    const flower = document.createElement("div");
+document.addEventListener("DOMContentLoaded", function () {
 
-    flower.classList.add("flower");
-    flower.innerHTML = "🌸";
+    const video = document.getElementById("birthdayVideo");
+    const playButton = document.getElementById("playButton");
 
-    flower.style.left = Math.random() * 100 + "vw";
-    flower.style.animationDuration = (4 + Math.random() * 5) + "s";
-    flower.style.fontSize = (18 + Math.random() * 25) + "px";
+    if (video && playButton) {
 
-    document.body.appendChild(flower);
+        playButton.addEventListener("click", function () {
 
-    setTimeout(() => {
-        flower.remove();
-    }, 9000);
-}
+            if (video.paused) {
 
-setInterval(createFlower, 500);
+                video.play();
+
+                playButton.innerHTML =
+                    "⏸ Pause Birthday Video";
+
+            } else {
+
+                video.pause();
+
+                playButton.innerHTML =
+                    "▶ Play Birthday Video";
+            }
+
+        });
+
+        video.addEventListener("play", function () {
+            playButton.innerHTML =
+                "⏸ Pause Birthday Video";
+        });
+
+        video.addEventListener("pause", function () {
+            playButton.innerHTML =
+                "▶ Play Birthday Video";
+        });
+    }
+
+});
