@@ -1,0 +1,919 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   PAGE 1 — PINK BIRTHDAY INTRO
+===================================================== */
+
+.first-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 10% 10%, #ffffff 0%, transparent 20%),
+        radial-gradient(circle at 90% 90%, #ffd1e1 0%, transparent 25%),
+        linear-gradient(135deg, #ffe5ef, #ffd3e3, #f9dff0);
+
+    color: #633c50;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Soft background circles */
+
+.first-page::before,
+.first-page::after {
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    filter: blur(5px);
+}
+
+.first-page::before {
+    top: -150px;
+    left: -120px;
+}
+
+.first-page::after {
+    bottom: -150px;
+    right: -120px;
+}
+
+
+/* Main container */
+
+.welcome-container {
+    width: 92%;
+    max-width: 900px;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Small heading */
+
+.small-title {
+    font-size: 17px;
+
+    color: #c06b91;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+    animation: fadeDown 1s ease;
+}
+
+
+/* Main heading */
+
+.welcome-container h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(42px, 7vw, 68px);
+
+    font-weight: bold;
+
+    background: linear-gradient(
+        90deg,
+        #c64f7d,
+        #e875a1,
+        #a957a0
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 30px;
+
+    text-shadow: 0 8px 25px rgba(190, 80, 130, 0.15);
+
+    animation: titleAppear 1.2s ease;
+}
+
+
+/* =====================================================
+   PHOTOS
+===================================================== */
+
+.photos {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin: 25px auto 35px;
+
+    max-width: 650px;
+}
+
+
+/* Small polaroids */
+
+.photo {
+    background: white;
+
+    padding: 8px 8px 12px;
+
+    width: 145px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 25px rgba(120, 50, 90, 0.18);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    animation: photoAppear 1s ease backwards;
+}
+
+.photo img {
+    width: 100%;
+
+    height: 155px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    display: block;
+}
+
+
+.photo span {
+    display: block;
+
+    margin-top: 9px;
+
+    color: #a05275;
+
+    font-family: cursive;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* Different rotations */
+
+.photo-left {
+    transform: rotate(-8deg);
+
+    animation-delay: 0.2s;
+}
+
+.photo-middle {
+    transform: translateY(-15px) rotate(2deg);
+
+    animation-delay: 0.4s;
+}
+
+.photo-right {
+    transform: rotate(8deg);
+
+    animation-delay: 0.6s;
+}
+
+
+/* Hover */
+
+.photo:hover {
+    transform:
+        translateY(-12px)
+        rotate(0deg)
+        scale(1.08);
+
+    box-shadow:
+        0 20px 40px rgba(160, 70, 120, 0.25);
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote-box {
+    max-width: 620px;
+
+    margin: 20px auto;
+
+    padding: 22px 30px;
+
+    background: rgba(255, 255, 255, 0.48);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 12px 35px rgba(150, 70, 110, 0.12);
+
+    backdrop-filter: blur(12px);
+
+    position: relative;
+}
+
+
+.quote-box p {
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    font-style: italic;
+
+    color: #70465b;
+}
+
+
+.quote-mark {
+    font-family: Georgia, serif;
+
+    font-size: 45px;
+
+    color: #db79a1;
+
+    line-height: 0;
+}
+
+
+/* Message */
+
+.message {
+    margin: 20px 0;
+
+    color: #9b5977;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+.next-button {
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e875a4,
+            #c86da7,
+            #9d79d5
+        );
+
+    padding: 14px 38px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 10px 25px rgba(190, 90, 140, 0.3);
+
+    transition: all 0.35s ease;
+}
+
+
+.next-button:hover {
+    transform:
+        translateY(-5px)
+        scale(1.06);
+
+    box-shadow:
+        0 15px 35px rgba(190, 90, 140, 0.45);
+}
+
+
+/* =====================================================
+   FLOATING EMOJIS
+===================================================== */
+
+.emoji {
+    position: fixed;
+
+    font-size: 27px;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        floatingEmoji 5s ease-in-out infinite;
+}
+
+.emoji1 {
+    top: 8%;
+    left: 8%;
+}
+
+.emoji2 {
+    top: 15%;
+    right: 8%;
+    animation-delay: 1s;
+}
+
+.emoji3 {
+    bottom: 12%;
+    left: 8%;
+    animation-delay: 2s;
+}
+
+.emoji4 {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 1.5s;
+}
+
+.emoji5 {
+    top: 45%;
+    left: 3%;
+    animation-delay: 0.5s;
+}
+
+.emoji6 {
+    top: 45%;
+    right: 3%;
+    animation-delay: 2.5s;
+}
+
+
+@keyframes floatingEmoji {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-22px)
+            rotate(8deg);
+    }
+}
+
+
+/* =====================================================
+   PAGE 2 — BLUE FLOWER BIRTHDAY
+===================================================== */
+
+.birthday-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #e8f8ff 0%,
+            #bde8ff 35%,
+            #8fc9f5 70%,
+            #7098df 100%
+        );
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* Extra blue background glow */
+
+.birthday-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.22);
+
+    filter: blur(50px);
+
+    top: 20%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* =====================================================
+   BIRTHDAY CARD
+===================================================== */
+
+.birthday-container {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+.birthday-card {
+    width: min(90%, 720px);
+
+    padding: 50px 35px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 40px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(40, 90, 160, 0.3);
+
+    animation:
+        birthdayAppear 1.5s ease;
+}
+
+
+/* Cake */
+
+.cake {
+    font-size: 65px;
+
+    animation:
+        cakeBounce 2s ease-in-out infinite;
+
+    margin-bottom: 8px;
+}
+
+
+.surprise-text {
+    color: #5f82b8;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Main birthday title */
+
+.birthday-title {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 8vw, 78px);
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3b78c4,
+            #609fe5,
+            #716fd0
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        birthdayGlow 2s ease-in-out infinite alternate;
+}
+
+
+.birthday-card h2 {
+    font-family: cursive;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    color: #557bc0;
+
+    margin-top: 3px;
+}
+
+
+/* Divider */
+
+.divider {
+    margin: 25px 0;
+
+    color: #4d91db;
+
+    font-size: 27px;
+
+    letter-spacing: 10px;
+}
+
+
+/* Birthday paragraphs */
+
+.birthday-message {
+    max-width: 590px;
+
+    margin: 17px auto;
+
+    color: #496583;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+.final-message {
+    margin-top: 30px;
+
+    color: #477ac0;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    font-family: cursive;
+}
+
+
+.hearts {
+    margin-top: 22px;
+
+    font-size: 24px;
+
+    animation:
+        heartBeat 1.5s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   BLUE FLOWERS
+===================================================== */
+
+#flowers-container {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+.flower {
+    position: fixed;
+
+    top: -80px;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    filter:
+        drop-shadow(
+            0 3px 5px
+            rgba(40, 90, 160, 0.25)
+        );
+
+    animation:
+        blowFlower linear forwards;
+}
+
+
+/* Much more natural flower movement */
+
+@keyframes blowFlower {
+
+    0% {
+        transform:
+            translate(-50px, -80px)
+            rotate(0deg)
+            scale(0.7);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    30% {
+        transform:
+            translate(120px, 25vh)
+            rotate(100deg)
+            scale(1);
+    }
+
+    55% {
+        transform:
+            translate(-80px, 55vh)
+            rotate(210deg)
+            scale(0.9);
+    }
+
+    80% {
+        transform:
+            translate(170px, 80vh)
+            rotate(300deg)
+            scale(1.1);
+    }
+
+    100% {
+        transform:
+            translate(-120px, 115vh)
+            rotate(420deg)
+            scale(0.7);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   EXTRA SPARKLES
+===================================================== */
+
+.sparkle {
+    position: fixed;
+
+    color: white;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    z-index: 4;
+
+    animation:
+        sparkleAnimation 2s ease-in-out infinite;
+}
+
+
+@keyframes sparkleAnimation {
+
+    0%,
+    100% {
+        opacity: 0.2;
+
+        transform:
+            scale(0.7)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.4)
+            rotate(180deg);
+    }
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes titleAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes birthdayAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.8)
+            translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+@keyframes cakeBounce {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            translateY(-13px)
+            rotate(2deg);
+    }
+}
+
+
+@keyframes birthdayGlow {
+
+    from {
+        filter:
+            drop-shadow(
+                0 0 2px
+                rgba(255, 255, 255, 0.5)
+            );
+    }
+
+    to {
+        filter:
+            drop-shadow(
+                0 0 15px
+                rgba(255, 255, 255, 0.9)
+            );
+    }
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .welcome-container {
+        padding-top: 25px;
+    }
+
+    .welcome-container h1 {
+        font-size: 40px;
+
+        margin-bottom: 20px;
+    }
+
+    .photos {
+        gap: 8px;
+    }
+
+    .photo {
+        width: 105px;
+
+        padding: 6px 6px 10px;
+    }
+
+    .photo img {
+        height: 115px;
+    }
+
+    .photo span {
+        font-size: 10px;
+    }
+
+    .photo-middle {
+        transform:
+            translateY(-10px)
+            rotate(2deg);
+    }
+
+    .quote-box {
+        padding: 18px;
+    }
+
+    .quote-box p {
+        font-size: 16px;
+    }
+
+    .birthday-card {
+        padding: 35px 20px;
+    }
+
+    .birthday-message {
+        font-size: 16px;
+    }
+}

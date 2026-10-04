@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Best Friend 💙</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="first-page">
+
+    <!-- Cute floating emojis -->
+    <div class="emoji emoji1">🦋</div>
+    <div class="emoji emoji2">🎀</div>
+    <div class="emoji emoji3">🌸</div>
+    <div class="emoji emoji4">🧸</div>
+    <div class="emoji emoji5">✨</div>
+    <div class="emoji emoji6">💙</div>
+
+    <main class="welcome-container">
+
+        <p class="small-title">A little surprise for you... 💌</p>
+
+        <h1>Hey Birthday Girl! 🎀</h1>
+
+        <div class="photos">
+
+            <div class="photo photo-left">
+                <img src="{{ url_for('static', filename='images/friend1.jpg') }}"
+                     alt="Best friend">
+                <span>Pretty you 💕</span>
+            </div>
+
+            <div class="photo photo-middle">
+                <img src="{{ url_for('static', filename='images/friend2.jpg') }}"
+                     alt="Best friend">
+                <span>Cutie 🦋</span>
+            </div>
+
+            <div class="photo photo-right">
+                <img src="{{ url_for('static', filename='images/friend3.jpg') }}"
+                     alt="Best friend">
+                <span>My favorite person 💙</span>
+            </div>
+
+        </div>
+
+        <div class="quote-box">
+            <span class="quote-mark">“</span>
+
+            <p>
+                Some people make ordinary moments feel special.
+                I'm lucky that one of those people is you. 💙
+            </p>
+
+            <span class="quote-mark">”</span>
+        </div>
+
+        <p class="message">
+            Because you deserve a little bit of magic today... ✨
+        </p>
+
+        <a href="{{ url_for('birthday') }}" class="next-button">
+            Next 💙
+        </a>
+
+    </main>
+
+</body>
+</html>
